@@ -32,7 +32,7 @@ function LM_Idx = detectTabletopPlane(femur, side, FHC, neckAxis, LM_Idx, vararg
 p = inputParser;
 addRequired(p,'femur',@(x) isstruct(x) && isfield(x, 'vertices') && isfield(x,'faces'))
 addRequired(p,'side',@(x) any(validatestring(x,{'R','L'})));
-addOptional(p,'visualization',true,@islogical);
+addParameter(p,'visualization',true,@islogical);
 parse(p,femur,side,varargin{:});
 
 femur = p.Results.femur;

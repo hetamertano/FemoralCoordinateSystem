@@ -50,7 +50,7 @@ end
 
 parser = inputParser;
 validStrings = {'all','mostVertices','maxBoundingBox','maxVolume'};
-addOptional(parser,'components','all',@(x) any(validatestring(x, validStrings)));
+addParameter(parser,'components','all',@(x) any(validatestring(x, validStrings)));
 parse(parser,varargin{:});
 outputComp = validatestring(parser.Results.components, validStrings);
 

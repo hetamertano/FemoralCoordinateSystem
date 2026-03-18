@@ -41,7 +41,7 @@ p = inputParser;
 validStrings = {...
     'ZYX','ZXY','YXZ','YZX','XYZ','XZY',...
     'ZYZ','ZXZ','YZY','YXY','XZX','XYX'};
-addOptional(p,'convention','ZYX',@(x) any(validatestring(x,validStrings)));
+addParameter(p,'convention','ZYX',@(x) any(validatestring(x,validStrings)));
 logParValidFunc = @(x) (islogical(x) || isequal(x,1) || isequal(x,0));
 addParameter(p,'IsRotation', 1, logParValidFunc);
 valTol = @(x) validateattributes(x,{'numeric'},{'scalar', '>=',eps(class(mat)), '<=',1});

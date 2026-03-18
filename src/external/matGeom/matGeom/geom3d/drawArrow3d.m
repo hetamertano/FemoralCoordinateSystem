@@ -64,7 +64,7 @@ isPointArray3d = @(x) validateattributes(x,{'numeric'},...
     {'nonempty','nonnan','real','finite','size',[nan,3]});
 addRequired(p,'pos',isPointArray3d)
 addRequired(p,'vec',isPointArray3d);
-addOptional(p,'color', 'k', @(x) validateColor(x, numArrows));
+addParameter(p,'color', 'k', @(x) validateColor(x, numArrows));
 isStemRatio = @(x) validateattributes(x,{'numeric'},{'vector','>', 0, '<', 1});
 addParameter(p,'stemRatio', 0.75, isStemRatio);
 isArrowRadius = @(x) validateattributes(x,{'numeric'},{'scalar','>=', 0.01, '<=', 0.3});

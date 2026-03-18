@@ -20,7 +20,7 @@ addRequired(p,'side',@(x) any(validatestring(x,{'R','L'})));
 isPoint3d = @(x) validateattributes(x,{'numeric'},...
     {'nonempty','nonnan','real','finite','size',[1,3]});
 addRequired(p,'HJC', isPoint3d);
-addOptional(p,'visualization',true,logParValidFunc);
+addParameter(p,'visualization',true,logParValidFunc);
 parse(p, femur, side, HJC, varargin{:});
 
 femur = p.Results.femur;

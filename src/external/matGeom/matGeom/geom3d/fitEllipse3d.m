@@ -40,7 +40,7 @@ function [fittedEllipse3d, TFM3D] = fitEllipse3d(points, varargin)
 parser = inputParser;
 addRequired(parser, 'points', @(x) validateattributes(x, {'numeric'},...
     {'ncols',3,'real','finite','nonnan'}));
-addOptional(parser,'visualization',false,@islogical);
+addParameter(parser,'visualization',false,@islogical);
 parse(parser,points,varargin{:});
 points=parser.Results.points;
 
